@@ -1,0 +1,5 @@
+typeORM: https://typeorm.io/#/
+
+COnfigure seu banco de dados através do arquivo ormconfig.json
+
+"postgres"
