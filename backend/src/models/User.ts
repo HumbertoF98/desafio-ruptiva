@@ -7,19 +7,16 @@ import {
 } from "typeorm";
 
 // decorator for save this model in revenues table
-@Entity("revenues")
-class Revenue {
+@Entity("users")
+class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()
-  name: string;
+  email: string;
 
   @Column()
-  description: string;
-
-  @Column()
-  url_photo: string;
+  password: string;
 
   @CreateDateColumn()
   created_at: Date;
@@ -28,4 +25,4 @@ class Revenue {
   updated_at: Date;
 }
 
-export default Revenue;
+export default User;
