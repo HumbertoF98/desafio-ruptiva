@@ -1,6 +1,8 @@
 import { getRepository } from "typeorm";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
+// informations for token
+import authConfig from "../config/auth";
 import User from "../models/User";
 
 interface Request {
@@ -30,9 +32,9 @@ class AuthenticateUserService {
     }
 
     // secret md5 generator
-    const token = sign({}, "3cff642bb2e42d1ba3785a0de8f54dea", {
+    const token = sign({}, authConfig.jwt.secret, {
       subject: user.id,
-      expiresIn: "3d",
+      expiresIn: authConfig.jwt.expiresIn,
     });
 
     return {
