@@ -22,13 +22,13 @@ class AuthenticateUserService {
     const user = await usersRepository.findOne({ where: { email } });
 
     if (!user) {
-      throw new Error("Incorrect email/password combination.");
+      throw new Error("E-mail e/ou senha incorretos.");
     }
 
     const passwordMatched = await compare(password, user.password);
 
     if (!passwordMatched) {
-      throw new Error("Incorrect email/password combination.");
+      throw new Error("E-mail e/ou senha incorretos.");
     }
 
     // secret md5 generator

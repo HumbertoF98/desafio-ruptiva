@@ -18,7 +18,9 @@ export default function ensureAuthenticated(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    return response.status(401).json({ message: "JWT Token is missing" });
+    return response
+      .status(401)
+      .json({ message: "Não autorizado (Token não encontrado)" });
   }
 
   const [, token] = authHeader.split(" ");
@@ -34,6 +36,6 @@ export default function ensureAuthenticated(
 
     return next();
   } catch (err) {
-    return response.status(401).json({ message: "Invalid JWT Token" });
+    return response.status(401).json({ message: "Token inválido" });
   }
 }
