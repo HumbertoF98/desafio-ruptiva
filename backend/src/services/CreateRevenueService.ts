@@ -1,5 +1,5 @@
-import Revenue from "../models/Revenue";
 import { getCustomRepository } from "typeorm";
+import Revenue from "../models/Revenue";
 import RevenuesRepository from "../repositories/RevenuesRepository";
 
 interface Request {

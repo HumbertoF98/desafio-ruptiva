@@ -3,16 +3,22 @@ import { verify } from "jsonwebtoken";
 
 import authConfig from "../config/auth";
 
+interface TokenPayload {
+  iat: number;
+  exp: number;
+  sub: string;
+}
+
 // middleware responsible to authenticated routes
 export default function ensureAuthenticated(
   request: Request,
   response: Response,
   next: NextFunction
-): void {
+): any {
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    throw new Error("JWT Token is missing");
+    return response.status(401).json({ message: "JWT Token is missing" });
   }
 
   const [, token] = authHeader.split(" ");
@@ -20,9 +26,14 @@ export default function ensureAuthenticated(
   try {
     const decoded = verify(token, authConfig.jwt.secret);
 
-    console.log(decoded);
+    const { sub } = decoded as TokenPayload;
+
+    request.user = {
+      id: sub,
+    };
+
     return next();
   } catch (err) {
-    throw new Error("Invalid JWT Token");
+    return response.status(401).json({ message: "Invalid JWT Token" });
   }
 }
