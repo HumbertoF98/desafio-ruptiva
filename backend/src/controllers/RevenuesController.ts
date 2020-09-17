@@ -21,7 +21,7 @@ class RevenuesController {
         url_photo,
       });
 
-      return response.json(revenue);
+      return response.status(200).json(revenue);
     } catch (err) {
       return response.status(400).json({ message: err.message });
     }
@@ -31,7 +31,9 @@ class RevenuesController {
     try {
       const revenuesRepository = getCustomRepository(RevenuesRepository);
       await revenuesRepository.delete(request.params.id);
-      return response.json({ message: "Receita deletada com sucesso" });
+      return response
+        .status(200)
+        .json({ message: "Receita deletada com sucesso" });
     } catch (err) {
       return response
         .status(500)
