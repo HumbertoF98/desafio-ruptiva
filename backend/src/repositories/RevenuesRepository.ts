@@ -1,5 +1,5 @@
-import Revenue from "../models/Revenue";
 import { EntityRepository, Repository } from "typeorm";
+import Revenue from "../models/Revenue";
 
 @EntityRepository(Revenue)
 class RevenuesRepository extends Repository<Revenue> {}
