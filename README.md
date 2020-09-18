@@ -11,10 +11,8 @@ O projeto é um desafio formulado pela equipe da Ruptiva, onde foi construída u
 
 ## Tecnologias Utilizadas
 
-- Node.js
 - <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>
 
-- Express
 - <a href="https://expressjs.com/pt-br/" target="_blank" rel="noopener">Express</a>
 
 ### Utilização
