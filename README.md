@@ -15,6 +15,8 @@ O projeto é um desafio formulado pela equipe da Ruptiva, onde foi construída u
 
 - <a href="https://expressjs.com/pt-br/" target="_blank" rel="noopener">Express</a>
 
+- <a href="https://typeorm.io/" target="_blank" rel="noopener">TypeORM</a>
+
 ### Utilização
 
 Para a utilizar a API, basta seguir as instruções abaixo:
@@ -42,9 +44,19 @@ Primeiro clone o repositório em seu computador, por meio do terminal utilizando
   $ yarn # ou npm install
 ```
 
+3. Configurando o banco de dados
+
+```sh
+# Configure seu banco de dados através do arquivo ormconfig.json;
+# O banco de dados utilizado foi o Postgres, mas você pode configurar outro banco de dados, basta modificar o arquivo e instalar a dependência (por exemplo: para utilizar o mysql basta rodar um yarn add mysql e adicioná-lo no ormconfig.json);
+$ Você também pode acessar o site https://typeorm.io/ para maiores informações.
+```
+
 4. Iniciando a aplicação
 
 ```sh
+  # Rode os migrations
+  $ yarn typeorm migration:run # ou npm typeorm migration:run
   # Inicie o servidor
   $ yarn dev:server # ou npm dev:server
 ```
