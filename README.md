@@ -32,7 +32,7 @@ Primeiro clone o repositório em seu computador, por meio do terminal utilizando
 
 ```sh
   # Clone o repositório
-  $ git clone https://github.com/HumbertoF98/desafio-ruptiva
+  $ git clone https://github.com/HumbertoF98/desafio-ruptiva.git
   # Entre na pasta raiz da aplicação
   $ cd desafio-ruptiva
 ```
