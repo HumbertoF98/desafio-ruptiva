@@ -13,8 +13,6 @@ class SessionsController {
         password,
       });
 
-      delete user.password;
-
       return response.status(200).json({ user, token });
     } catch (err) {
       return response.status(400).json({ message: err.message });
