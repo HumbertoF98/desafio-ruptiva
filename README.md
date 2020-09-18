@@ -22,7 +22,7 @@ O projeto é um desafio formulado pela equipe da Ruptiva, onde foi construída u
 Para a utilizar a API, basta seguir as instruções abaixo:
 
 - Que você tenha instalado o **<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>**
-- Que você tenha instalado o **<a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM</a>**
+- Que você tenha instalado o **<a href="https://www.npmjs.com/" target="_blank" rel="noopener">NPM</a>** ou o **<a href="https://yarnpkg.com/" target="_blank" rel="noopener">YARN</a>**
 
 ### Passos para utilizar
 
@@ -41,12 +41,12 @@ Primeiro clone o repositório em seu computador, por meio do terminal utilizando
 
 ```sh
   # Instale as dependências da aplicação
-  $ npm install # ou yarn (caso tenha instalado)
+  $ yarn # ou npm install
 ```
 
-3. Iniciando a aplicação
+4. Iniciando a aplicação
 
 ```sh
-  # Inicie a aplicação web
-  $ npm start # ou yarn start (caso tenha instalado)
+  # Inicie o servidor
+  $ yarn dev:server # ou npm dev:server
 ```
